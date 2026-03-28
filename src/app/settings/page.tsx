@@ -39,10 +39,12 @@ function InputField({
   value: string;
   type?: string;
 }) {
+  const id = React.useId();
   return (
     <div className="grid gap-1.5">
-      <label className="text-[12px] font-medium text-[#6B7280]">{label}</label>
+      <label htmlFor={id} className="text-[12px] font-medium text-[#6B7280]">{label}</label>
       <input
+        id={id}
         type={type}
         defaultValue={value}
         className="h-9 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-[13px] text-[#111827] focus:border-[#111827] focus:outline-none sm:max-w-[360px]"
@@ -59,7 +61,7 @@ function ToggleField({ label, description, defaultChecked = false }: { label: st
         <p className="text-[11px] text-[#9CA3AF]">{description}</p>
       </div>
       <label className="relative inline-flex cursor-pointer items-center">
-        <input type="checkbox" className="peer sr-only" defaultChecked={defaultChecked} />
+        <input type="checkbox" className="peer sr-only" defaultChecked={defaultChecked} aria-label={label} />
         <div className="h-5 w-9 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-all peer-checked:bg-[#111827] peer-checked:after:translate-x-full"></div>
       </label>
     </div>
@@ -134,8 +136,9 @@ export default function SettingsPage() {
         description="ตั้งค่าการแสดงผลหน้าจอ"
       >
         <div className="grid gap-1.5">
-          <label className="text-[12px] font-medium text-[#6B7280]">สกุลเงิน</label>
+          <label htmlFor="setting-currency" className="text-[12px] font-medium text-[#6B7280]">สกุลเงิน</label>
           <select
+            id="setting-currency"
             defaultValue="THB"
             className="h-9 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-[13px] text-[#111827] focus:border-[#111827] focus:outline-none sm:max-w-[360px]"
           >
@@ -144,8 +147,9 @@ export default function SettingsPage() {
           </select>
         </div>
         <div className="grid gap-1.5">
-          <label className="text-[12px] font-medium text-[#6B7280]">รูปแบบวันที่</label>
+          <label htmlFor="setting-dateformat" className="text-[12px] font-medium text-[#6B7280]">รูปแบบวันที่</label>
           <select
+            id="setting-dateformat"
             defaultValue="dd/MM/yyyy"
             className="h-9 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-[13px] text-[#111827] focus:border-[#111827] focus:outline-none sm:max-w-[360px]"
           >
@@ -154,8 +158,9 @@ export default function SettingsPage() {
           </select>
         </div>
         <div className="grid gap-1.5">
-          <label className="text-[12px] font-medium text-[#6B7280]">จำนวนรายการต่อหน้า</label>
+          <label htmlFor="setting-perpage" className="text-[12px] font-medium text-[#6B7280]">จำนวนรายการต่อหน้า</label>
           <select
+            id="setting-perpage"
             defaultValue="10"
             className="h-9 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-[13px] text-[#111827] focus:border-[#111827] focus:outline-none sm:max-w-[360px]"
           >
