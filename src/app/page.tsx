@@ -1,5 +1,6 @@
 import DashboardMetrics from "@/features/dashboard/DashboardMetrics";
 import RecentOrdersTable from "@/features/dashboard/RecentOrdersTable";
+import InventoryTable from "@/features/dashboard/InventoryTable";
 
 export default function DashboardPage() {
   return (
@@ -17,8 +18,17 @@ export default function DashboardPage() {
       {/* KPI cards */}
       <DashboardMetrics />
 
-      {/* Recent orders */}
-      <RecentOrdersTable />
+      {/* Tables grid */}
+      <div className="grid gap-6 grid-cols-1 xl:grid-cols-2">
+        <div className="min-w-0 h-full">
+          {/* Recent orders */}
+          <RecentOrdersTable />
+        </div>
+        <div className="min-w-0 h-full">
+          {/* Inventory Overview */}
+          <InventoryTable />
+        </div>
+      </div>
     </div>
   );
 }
