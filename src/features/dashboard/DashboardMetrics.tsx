@@ -9,37 +9,29 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-/* ──────────────────────────────────────────────────────────────────────────
-   Static KPI data (replace with real API calls later)
-   ────────────────────────────────────────────────────────────────────────── */
-
 const METRICS = [
   {
-    label: "Revenue (MTD)",
-    value: "$24,812",
+    label: "รายได้ (เดือนนี้)",
+    value: "฿24,812",
     change: +12.4,
-    changeLabel: "vs last month",
+    changeLabel: "เทียบเดือนที่แล้ว",
     icon: DollarSign,
   },
   {
-    label: "Orders",
+    label: "คำสั่งซื้อ",
     value: "148",
     change: +8.1,
-    changeLabel: "vs last month",
+    changeLabel: "เทียบเดือนที่แล้ว",
     icon: ClipboardList,
   },
   {
-    label: "Low-Stock Alerts",
+    label: "แจ้งเตือนสินค้าใกล้หมด",
     value: "3",
     change: -1,
-    changeLabel: "since yesterday",
+    changeLabel: "เทียบกับเมื่อวาน",
     icon: AlertTriangle,
   },
 ];
-
-/* ──────────────────────────────────────────────────────────────────────────
-   Component
-   ────────────────────────────────────────────────────────────────────────── */
 
 export default function DashboardMetrics() {
   return (

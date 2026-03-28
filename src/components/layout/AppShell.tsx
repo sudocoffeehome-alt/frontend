@@ -17,11 +17,11 @@ import {
    ────────────────────────────────────────────────────────────────────────── */
 
 const NAV_ITEMS = [
-  { label: "Dashboard", href: "/", icon: LayoutDashboard },
-  { label: "Orders", href: "/orders", icon: ClipboardList },
-  { label: "Inventory", href: "/inventory", icon: Package },
-  { label: "Customers", href: "/customers", icon: Users },
-  { label: "Settings", href: "/settings", icon: Settings },
+  { label: "แดชบอร์ด", href: "/", icon: LayoutDashboard },
+  { label: "คำสั่งซื้อ", href: "/orders", icon: ClipboardList },
+  { label: "คลังสินค้า", href: "/inventory", icon: Package },
+  { label: "ลูกค้า", href: "/customers", icon: Users },
+  { label: "ตั้งค่า", href: "/settings", icon: Settings },
 ];
 
 /* ──────────────────────────────────────────────────────────────────────────

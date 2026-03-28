@@ -14,22 +14,14 @@ import { Badge } from "@/components/ui/badge";
 import { mockOrders } from "@/services/mockData";
 import type { OrderStatus } from "@/types";
 
-/* ──────────────────────────────────────────────────────────────────────────
-   Status badge styles
-   ────────────────────────────────────────────────────────────────────────── */
-
 const STATUS_STYLES: Record<OrderStatus, { className: string; label: string }> = {
-  pending:   { className: "border border-[#E5E7EB] bg-[#F9FAFB] text-[#6B7280]", label: "Pending" },
-  confirmed: { className: "border border-blue-200 bg-blue-50 text-blue-700", label: "Confirmed" },
-  roasting:  { className: "border border-amber-200 bg-amber-50 text-amber-700", label: "Roasting" },
-  shipped:   { className: "border border-indigo-200 bg-indigo-50 text-indigo-700", label: "Shipped" },
-  delivered: { className: "border border-emerald-200 bg-emerald-50 text-emerald-700", label: "Delivered" },
-  cancelled: { className: "border border-red-200 bg-red-50 text-red-600", label: "Cancelled" },
+  pending:   { className: "border border-[#E5E7EB] bg-[#F9FAFB] text-[#6B7280]", label: "รอดำเนินการ" },
+  confirmed: { className: "border border-blue-200 bg-blue-50 text-blue-700", label: "ยืนยันแล้ว" },
+  roasting:  { className: "border border-amber-200 bg-amber-50 text-amber-700", label: "กำลังคั่ว" },
+  shipped:   { className: "border border-indigo-200 bg-indigo-50 text-indigo-700", label: "จัดส่งแล้ว" },
+  delivered: { className: "border border-emerald-200 bg-emerald-50 text-emerald-700", label: "ส่งถึงแล้ว" },
+  cancelled: { className: "border border-red-200 bg-red-50 text-red-600", label: "ยกเลิก" },
 };
-
-/* ──────────────────────────────────────────────────────────────────────────
-   Component
-   ────────────────────────────────────────────────────────────────────────── */
 
 export default function RecentOrdersTable() {
   return (
@@ -37,9 +29,9 @@ export default function RecentOrdersTable() {
       {/* Header */}
       <div className="flex items-center justify-between border-b border-[#E5E7EB] px-4 py-3">
         <h2 className="text-[14px] font-semibold text-[#111827]">
-          Recent Orders
+          คำสั่งซื้อล่าสุด
         </h2>
-        <span className="text-[12px] text-[#9CA3AF]">Last 5 orders</span>
+        <span className="text-[12px] text-[#9CA3AF]">5 รายการล่าสุด</span>
       </div>
 
       {/* Table */}
@@ -47,19 +39,19 @@ export default function RecentOrdersTable() {
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className="text-[12px] font-medium text-[#9CA3AF]">
-              Order
+              เลขที่
             </TableHead>
             <TableHead className="text-[12px] font-medium text-[#9CA3AF]">
-              Customer
+              ลูกค้า
             </TableHead>
             <TableHead className="text-[12px] font-medium text-[#9CA3AF]">
-              Status
+              สถานะ
             </TableHead>
             <TableHead className="text-right text-[12px] font-medium text-[#9CA3AF]">
-              Total
+              ยอดรวม
             </TableHead>
             <TableHead className="text-right text-[12px] font-medium text-[#9CA3AF]">
-              Date
+              วันที่
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -84,10 +76,10 @@ export default function RecentOrdersTable() {
                   </Badge>
                 </TableCell>
                 <TableCell className="text-right text-[13px] font-medium tabular-nums text-[#111827]">
-                  ${order.total.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                  ฿{order.total.toLocaleString("th-TH", { minimumFractionDigits: 2 })}
                 </TableCell>
                 <TableCell className="text-right text-[13px] text-[#6B7280]">
-                  {format(new Date(order.createdAt), "MMM d, yyyy")}
+                  {format(new Date(order.createdAt), "dd/MM/yyyy")}
                 </TableCell>
               </TableRow>
             );

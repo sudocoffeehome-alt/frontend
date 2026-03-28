@@ -18,9 +18,9 @@ export default function InventoryTable() {
       {/* Header */}
       <div className="flex items-center justify-between border-b border-[#E5E7EB] px-4 py-3 shrink-0">
         <h2 className="text-[14px] font-semibold text-[#111827]">
-          Inventory Overview
+          ภาพรวมคลังสินค้า
         </h2>
-        <span className="text-[12px] text-[#9CA3AF]">Top Stock Levels</span>
+        <span className="text-[12px] text-[#9CA3AF]">ระดับสต็อก</span>
       </div>
 
       {/* Table */}
@@ -29,19 +29,19 @@ export default function InventoryTable() {
           <TableHeader>
             <TableRow className="hover:bg-transparent">
               <TableHead className="text-[12px] font-medium text-[#9CA3AF]">
-                SKU
+                รหัสสินค้า
               </TableHead>
               <TableHead className="text-[12px] font-medium text-[#9CA3AF]">
-                Name
+                ชื่อสินค้า
               </TableHead>
               <TableHead className="text-[12px] font-medium text-[#9CA3AF]">
-                Status
+                สถานะ
               </TableHead>
               <TableHead className="text-right text-[12px] font-medium text-[#9CA3AF]">
-                Stock
+                คงเหลือ
               </TableHead>
               <TableHead className="text-right text-[12px] font-medium text-[#9CA3AF]">
-                Price
+                ราคา
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -59,16 +59,16 @@ export default function InventoryTable() {
                   </TableCell>
                   <TableCell>
                     {isLowStock ? (
-                      <Badge variant="outline" className="border-red-200 bg-red-50 text-red-700 h-auto rounded-full px-2 py-0.5 text-[11px] font-medium">Low Stock</Badge>
+                      <Badge variant="outline" className="border-red-200 bg-red-50 text-red-700 h-auto rounded-full px-2 py-0.5 text-[11px] font-medium">สินค้าใกล้หมด</Badge>
                     ) : (
-                      <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700 h-auto rounded-full px-2 py-0.5 text-[11px] font-medium">In Stock</Badge>
+                      <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700 h-auto rounded-full px-2 py-0.5 text-[11px] font-medium">มีสินค้า</Badge>
                     )}
                   </TableCell>
                   <TableCell className="text-right text-[13px] font-medium tabular-nums text-[#111827]">
                     {item.stockQuantity}
                   </TableCell>
                   <TableCell className="text-right text-[13px] text-[#6B7280]">
-                    ${item.unitPrice.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                    ฿{item.unitPrice.toLocaleString("th-TH", { minimumFractionDigits: 2 })}
                   </TableCell>
                 </TableRow>
               );

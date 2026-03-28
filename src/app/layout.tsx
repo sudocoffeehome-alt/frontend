@@ -6,8 +6,8 @@ import AppShell from "@/components/layout/AppShell";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sudo Coffee OS",
-  description: "Operations dashboard for Sudo Coffee.",
+  title: "Sudo Coffee OS — ระบบจัดการร้านกาแฟ",
+  description: "ระบบจัดการคำสั่งซื้อ คลังสินค้า และลูกค้า สำหรับ Sudo Coffee",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="th">
       <body className={inter.className}>
         <AppShell>{children}</AppShell>
       </body>

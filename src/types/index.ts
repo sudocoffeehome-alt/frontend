@@ -65,3 +65,17 @@ export interface DashboardMetric {
   change: number;
   changeLabel: string;
 }
+
+// ─── Customer Types ─────────────────────────────────────────────────────────
+
+export interface Customer {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  totalOrders: number;
+  totalSpent: number;
+  lastOrderDate: string;
+  status: "active" | "inactive";
+}

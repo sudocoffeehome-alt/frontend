@@ -1,4 +1,4 @@
-import { Order, InventoryItem } from "@/types";
+import { Order, InventoryItem, Customer } from "@/types";
 
 // ─── Mock Orders ────────────────────────────────────────────────────────────
 
@@ -226,5 +226,76 @@ export const mockInventory: InventoryItem[] = [
     isActive: true,
     createdAt: "2026-02-01T00:00:00Z",
     updatedAt: "2026-03-14T04:00:00Z",
+  },
+];
+
+// ─── Mock Customers ─────────────────────────────────────────────────────────
+
+export const mockCustomers: Customer[] = [
+  {
+    id: "cust-001",
+    name: "สมชาย วงศ์สวัสดิ์",
+    email: "orders@greenleafcafe.com",
+    phone: "02-123-4567",
+    company: "Greenleaf Café",
+    totalOrders: 24,
+    totalSpent: 18540.0,
+    lastOrderDate: "2026-03-12T08:30:00Z",
+    status: "active",
+  },
+  {
+    id: "cust-002",
+    name: "วิภา จันทร์เพ็ญ",
+    email: "purchasing@thedailygrind.co",
+    phone: "02-234-5678",
+    company: "The Daily Grind",
+    totalOrders: 15,
+    totalSpent: 12890.5,
+    lastOrderDate: "2026-03-13T06:15:00Z",
+    status: "active",
+  },
+  {
+    id: "cust-003",
+    name: "ธนพล ศรีสุข",
+    email: "procurement@summithotels.com",
+    phone: "02-345-6789",
+    company: "Summit Hotels Group",
+    totalOrders: 8,
+    totalSpent: 45200.0,
+    lastOrderDate: "2026-03-14T02:00:00Z",
+    status: "active",
+  },
+  {
+    id: "cust-004",
+    name: "พิมพ์ใจ รักสัตย์",
+    email: "hello@nomadcowork.io",
+    phone: "089-876-5432",
+    company: "Nomad Coworking",
+    totalOrders: 6,
+    totalSpent: 3240.0,
+    lastOrderDate: "2026-03-10T11:00:00Z",
+    status: "active",
+  },
+  {
+    id: "cust-005",
+    name: "อานนท์ แก้วมณี",
+    email: "supply@velvetbean.com",
+    phone: "081-234-5678",
+    company: "Velvet Bean Roasters",
+    totalOrders: 32,
+    totalSpent: 67800.0,
+    lastOrderDate: "2026-03-14T07:45:00Z",
+    status: "active",
+  },
+  {
+    id: "cust-006",
+    name: "สุดา ประเสริฐ",
+    email: "info@cafebossa.th",
+    phone: "062-987-6543",
+    company: "Café Bossa",
+    totalOrders: 3,
+    totalSpent: 1520.0,
+    lastOrderDate: "2026-02-20T09:00:00Z",
+    status: "inactive",
   },
 ];
